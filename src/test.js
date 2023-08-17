@@ -1,0 +1,27 @@
+const columns = [
+  {
+    field: "jysBmsm",
+    headerName: "交易所",
+    headerCheckboxSelection: true,
+    checkboxSelection: true,
+  },
+  { field: "jjdm", headerName: "ETF代码" },
+  { field: "jjmc", headerName: "ETF名称" },
+  { field: "zqlbBmsm", headerName: "证券类别" },
+  { field: "typeBmsm", headerName: "申赎方式" },
+  { field: "sgshztBmsm", headerName: "申赎状态" },
+  { field: "wjljBmsm", headerName: "清单文件" },
+  { field: "jyrq", headerName: "处理日期" },
+  { field: "cljg", headerName: "处理结果" },
+  {
+    field: "action",
+    headerName: "操作",
+    cellRenderer: ActionRender,
+    minWidth: 160,
+    colId: "action",
+    cellStyle: { textAlign: "center" },
+    headerClass: "ag-grid-header-cell-centered",
+    suppressMenu: true,
+    // pinned: "right",
+  },
+];

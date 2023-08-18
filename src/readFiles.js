@@ -29,7 +29,12 @@ function findJSFiles(directoryPath, fileList = []) {
     }
   });
 
-  return fileList;
+  // 转换路径分隔符为正斜杠
+  const jsFilesNormalized = fileList.map((filePath) =>
+    filePath.replace(/\\/g, "/")
+  );
+
+  return jsFilesNormalized;
 }
 
 // // 指定要搜索 .js 文件的目录路径

@@ -3,7 +3,7 @@ const { readRules } = require("./readRules");
 const { transformRules } = require("./transformRules");
 const { autoReplace } = require("./autoReplace");
 
-// 配置搜索路径
+// 配置搜索路径 (即你要替换的文件所在的目录，这里使用的是相对路径，你也可以使用绝对路径)
 const filesPath = "../";
 // 获取需要的文件路径 array
 const jsFiles = findJSFiles(filesPath);

@@ -7,7 +7,7 @@
 1. git clone 项目到本地
 2. npm install 安装依赖
 3. 进入控制台修改配置项
-4. node xxx/index.js 在控制台运行程序
+4. 修改配置项后，在控制台运行 node xxx/index.js
 
 ## 项目结构
 

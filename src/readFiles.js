@@ -22,7 +22,9 @@ function findJSFiles(directoryPath, fileList = []) {
       }
 
       findJSFiles(filePath, fileList);
-    } else if (fileStat.isFile() && path.extname(file) === ".js") {
+    }
+    // 匹配后缀为js的文件
+    else if (fileStat.isFile() && path.extname(file) === ".js") {
       fileList.push(path.relative(__dirname, filePath));
     }
   });

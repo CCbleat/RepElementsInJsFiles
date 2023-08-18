@@ -1,57 +1,48 @@
 const fs = require("fs");
 
+// 定义一个同步函数来解析txt文件
 function readRules(filePath) {
-  return new Promise((resolve, reject) => {
-    // 使用 fs.readFile 读取文件内容
-    fs.readFile(filePath, "utf8", (err, data) => {
-      if (err) {
-        // 如果发生错误，reject Promise 并传递错误信息
-        reject(err);
-        return;
+  try {
+    // 使用readFileSync以同步方式读取文件内容
+    const data = fs.readFileSync(filePath, "utf-8");
+    const lines = data.split("\n"); // 将内容按行分割
+
+    const leftArray = [];
+    const rightArray = [];
+
+    // 遍历每一行数据
+    lines.forEach((line) => {
+      const parts = line.split("|"); // 将行数据按 "|" 分割
+      if (parts.length === 2) {
+        leftArray.push(parts[0].trim()); // 存储左侧数据
+        rightArray.push(parts[1].trim()); // 存储右侧数据
       }
-
-      // 分割文件内容的行
-      const lines = data.trim().split("\n");
-
-      // 定义数组用于存放左侧和右侧数据
-      const leftArray = [];
-      const rightArray = [];
-
-      // 遍历每一行数据
-      lines.forEach((line) => {
-        // 根据"&"分割数据块
-        const dataBlocks = line.split("&");
-        dataBlocks.forEach((dataBlock) => {
-          // 根据"|"分割数据
-          const keyValue = dataBlock.split("|");
-          if (keyValue.length === 2) {
-            const [key, value] = keyValue;
-            if (key && value) {
-              // 存储到数组中
-              leftArray.push(key);
-              // slice 用于去除最后一个字符 \r换行符的一部分
-              rightArray.push(value.slice(0, value.length - 1));
-            }
-          }
-        });
-      });
-
-      // 解析完成后，resolve Promise 并传递左右数组
-      resolve({ leftArray, rightArray });
     });
-  });
+
+    return {
+      leftArray,
+      rightArray,
+    };
+  } catch (err) {
+    console.error("Error reading file:", err);
+    return null;
+  }
 }
 
-// const _filePath = "./resources/rules/表字段替换20230814_1004.txt";
+// 定义文件路径
+const filePath = "./resources/rules/表字段替换20230814_1004.txt"; // 替换成你的文件路径
 
-// 调用函数
-// readRules(_filePath)
-//   .then((result) => {
-//     console.log("Left Array:", result.leftArray);
-//     console.log("Right Array:", result.rightArray);
-//   })
-//   .catch((err) => {
-//     console.error("Error:", err);
-//   });
+// 调用同步函数并获取结果
+const { leftArray, rightArray } = parseTxtFileSync(filePath);
+
+// 检查结果并打印
+if (leftArray && rightArray) {
+  console.log("Left Array:", leftArray);
+  console.log("Right Array:", rightArray);
+  console.log("Left Array Length:", leftArray.length);
+  console.log("Right Array Length:", rightArray.length);
+} else {
+  console.log("An error occurred.");
+}
 
 exports.readRules = readRules;

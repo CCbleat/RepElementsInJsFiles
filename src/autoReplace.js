@@ -1,3 +1,5 @@
+const replace = require("replace-in-file");
+
 // const options = {
 //   files: "./test.js", // Path to environment.prod.ts
 //   from: [/jjdm/g, /jjmc/g], // Regex for the key-value pair

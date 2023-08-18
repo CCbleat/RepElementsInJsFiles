@@ -5,7 +5,7 @@ const path = require("path");
 function findJSFiles(directoryPath, fileList = []) {
   // 要排除的子目录
   // 例子 const excludedSubdirectories = ['node_modules', 'exclude_dir1', 'exclude_dir2'];
-  const excludedSubdirectories = ["node_modules"];
+  const excludedSubdirectories = ["node_modules", "RepElementsInJsFiles"]; // 排除自身 和 node_modules
 
   // 读取目录内容
   const files = fs.readdirSync(directoryPath);

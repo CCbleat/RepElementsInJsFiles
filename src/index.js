@@ -4,7 +4,7 @@ const { transformRules } = require("./transformRules");
 const { autoReplace } = require("./autoReplace");
 
 // 配置搜索路径 (即你要替换的文件所在的目录，这里使用的是相对路径，你也可以使用绝对路径)
-const filesPath = "../";
+const filesPath = "../../a5-web-front/src";
 // 获取需要的文件路径 array
 const jsFiles = findJSFiles(filesPath);
 console.log("JS 文件数量: ", jsFiles.length);
@@ -19,7 +19,7 @@ const transformOptions = {
   caseInsensitive: false, // 大小写敏感
   wholeWord: true, // 全词匹配
   global: true, // 匹配全部
-  castTolowerCase: false, // 规则转换为小写
+  castTolowerCase: true, // 规则转换为小写
   castToUpperCase: false, // 规则转换为大写
 };
 // 转换规则

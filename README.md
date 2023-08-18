@@ -4,9 +4,10 @@
 
 ## 项目运行
 
-1. npm install 安装依赖
-2. 进入控制台修改配置项
-3. node xxx/index.js 在控制台运行程序
+1. git clone 项目到本地
+2. npm install 安装依赖
+3. 进入控制台修改配置项
+4. node xxx/index.js 在控制台运行程序
 
 ## 项目结构
 

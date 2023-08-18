@@ -25,5 +25,7 @@ src: 源码文件夹
 
 ## 运行过程中的预期
 
+* 可以在控制台中查看到相关信息
 * 会出现进度 => 当前进度:  1067 / 1269
 * 会出现替换成功的文件名 => 替换完成:  ../../src/utils/Yyb.js
+* 是否有替换发生 => Replacement results: [ { file: '../../a5-web-front/src/utils/Yyb.js', hasChanged: true } ]

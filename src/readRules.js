@@ -12,6 +12,14 @@ function readRules(filePath) {
 
     // 遍历每一行数据
     lines.forEach((line) => {
+      // 根据"&"分割数据
+      // const parts = line.split("&");
+
+      // 如果包含"&"则跳过此轮遍历
+      // 表名的替换 这里不需要
+      if (line.includes("&")) {
+        return; // 由于这里是foreach, 使用return只会结束当前loop, 进入下一个loop, 请放心使用
+      }
       const parts = line.split("|"); // 将行数据按 "|" 分割
       if (parts.length === 2) {
         leftArray.push(parts[0].trim()); // 存储左侧数据

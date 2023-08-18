@@ -32,14 +32,14 @@ function findJSFiles(directoryPath, fileList = []) {
   return fileList;
 }
 
-// 指定要搜索 .js 文件的目录路径
-const directoryPath = "../"; // 用实际目录路径替换
+// // 指定要搜索 .js 文件的目录路径
+// const directoryPath = "../"; // 用实际目录路径替换
 
-// 调用 findJSFiles 函数并将结果存储在 jsFiles 数组中
-const jsFiles = findJSFiles(directoryPath);
+// // 调用 findJSFiles 函数并将结果存储在 jsFiles 数组中
+// const jsFiles = findJSFiles(directoryPath);
 
-// 打印 .js 文件的数量以及它们的相对路径
-console.log("JS 文件数量:", jsFiles.length);
-console.log("JS 文件路径:", jsFiles);
+// // 打印 .js 文件的数量以及它们的相对路径
+// console.log("JS 文件数量:", jsFiles.length);
+// console.log("JS 文件路径:", jsFiles);
 
 exports.findJSFiles = findJSFiles;

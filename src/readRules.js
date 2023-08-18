@@ -29,20 +29,20 @@ function readRules(filePath) {
   }
 }
 
-// 定义文件路径
-const filePath = "./resources/rules/表字段替换20230814_1004.txt"; // 替换成你的文件路径
+// // 定义文件路径
+// const filePath = "./resources/rules/表字段替换20230814_1004.txt"; // 替换成你的文件路径
 
-// 调用同步函数并获取结果
-const { leftArray, rightArray } = parseTxtFileSync(filePath);
+// // 调用同步函数并获取结果
+// const { leftArray, rightArray } = readRules(filePath);
 
-// 检查结果并打印
-if (leftArray && rightArray) {
-  console.log("Left Array:", leftArray);
-  console.log("Right Array:", rightArray);
-  console.log("Left Array Length:", leftArray.length);
-  console.log("Right Array Length:", rightArray.length);
-} else {
-  console.log("An error occurred.");
-}
+// // 检查结果并打印
+// if (leftArray && rightArray) {
+//   console.log("Left Array:", leftArray);
+//   console.log("Right Array:", rightArray);
+//   console.log("Left Array Length:", leftArray.length);
+//   console.log("Right Array Length:", rightArray.length);
+// } else {
+//   console.log("An error occurred.");
+// }
 
 exports.readRules = readRules;

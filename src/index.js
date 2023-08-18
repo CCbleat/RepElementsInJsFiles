@@ -15,8 +15,8 @@ const rulesPath = "../resources/rules/表字段替换20230814_1004.txt";
 const { leftArray, rightArray } = readRules(rulesPath);
 
 // 转换规则配置
-transformOptions = {
-  caseInsensitive: flase, // 大小写敏感
+const transformOptions = {
+  caseInsensitive: false, // 大小写敏感
   wholeWord: true, // 全词匹配
   global: true, // 匹配全部
   castTolowerCase: false, // 规则转换为小写

@@ -11,8 +11,8 @@ const _options = {
   caseInsensitive: flase, // 大小写敏感
   wholeWord: true, // 全词匹配
   global: true, // 匹配全部
-  //   castTolowerCase: false, // 规则转换为小写
-  //   castToUpperCase: false, // 规则转换为大写
+  castTolowerCase: false, // 规则转换为小写
+  castToUpperCase: false, // 规则转换为大写
 };
 
 const transformRules = (rules, options = _options) => {
@@ -33,6 +33,14 @@ function transformToRegex(rules, options) {
   }
   return rules.map((rule) => {
     let processedRule = rule;
+    // 转换为小写
+    if (options.castTolowerCase) {
+      processedRule = processedRule.toLowerCase();
+    }
+    // 转换为大写
+    if (options.castToUpperCase) {
+      processedRule = processedRule.toUpperCase();
+    }
     // 添加全词匹配 边界
     if (options.wholeWord) {
       processedRule = "\\b" + processedRule + "\\b";

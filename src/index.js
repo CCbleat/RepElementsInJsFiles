@@ -19,6 +19,8 @@ transformOptions = {
   caseInsensitive: flase, // 大小写敏感
   wholeWord: true, // 全词匹配
   global: true, // 匹配全部
+  castTolowerCase: false, // 规则转换为小写
+  castToUpperCase: false, // 规则转换为大写
 };
 // 转换规则
 const processedRules = transformRules(leftArray, transformOptions);
